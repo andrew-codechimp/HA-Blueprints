@@ -1,0 +1,60 @@
+blueprint:
+  name: Calendar - Add Unique
+  description: >
+    Add an event to a calendar if the event does not already exist.
+
+    The event summary is compared to the existing calendar items.
+  author: andrew-codechimp
+  source_url: https://github.com/andrew-codechimp/HA-Blueprints/blob/main/scripts/calendar_add_unique.yaml
+  domain: script
+
+sequence:
+  - action: calendar.get_events
+    target:
+      entity_id: '{{ calendar }}'
+    data:
+      start_date_time: '{{ start_time }}'
+      end_date_time: '{{ end_time }}'
+    response_variable: calendar_events
+  - if:
+      - condition: template
+        value_template: >-
+          {{
+          calendar_events[calendar]['events']|selectattr('summary','search',summary)|list|count
+          == 0 }}
+    then:
+      - action: calendar.create_event
+        data:
+          summary: '{{ summary }}'
+          start_date_time: '{{ start_time }}'
+          end_date_time: '{{ end_time }}'
+        target:
+          entity_id: '{{ calendar }}'
+fields:
+  calendar:
+    selector:
+      entity:
+        filter:
+          - domain: calendar
+    name: Calendar
+    required: true
+    description: The calendar
+  summary:
+    selector:
+      text: null
+    name: Summary
+    description: The summary of the event
+    required: true
+  start_time:
+    selector:
+      datetime: {}
+    name: Start time
+    required: true
+  end_time:
+    selector:
+      datetime: {}
+    name: End time
+    required: true
+
+mode: queued
+icon: mdi:clipboard-list
