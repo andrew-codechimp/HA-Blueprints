@@ -1,0 +1,82 @@
+blueprint:
+  name: To-Do Add Unique
+  description: >
+    Add an item to a to-do list if the item does not already exist.
+    
+    The item name is compared to the existing items in the list, and if it already exists, it will not be added again.
+  author: andrew-codechimp
+  source_url: https://raw.githubusercontent.com/andrew-codechimp/HA-Blueprints/main/todo_add_unique.yaml
+  domain: script
+
+sequence:
+  - target:
+      entity_id: '{{ list }}'
+    data:
+      status: needs_action
+    response_variable: mylistneedsaction
+    action: todo.get_items
+  - target:
+      entity_id: '{{ list }}'
+    data:
+      status: completed
+    response_variable: mylistcompleted
+    action: todo.get_items
+  - if:
+      - condition: template
+        value_template: |
+          {{
+            mylistcompleted[list]['items']
+            | selectattr('summary', 'search', item)
+            | list
+            | count == 1
+          }}
+    then:
+      - action: todo.update_item
+        target:
+          entity_id: '{{ list }}'
+        data:
+          item: '{{ item }}'
+          status: needs_action
+          description: '{{ description | default("") }}'
+    else:
+      - if:
+          - condition: template
+            value_template: |
+              {{
+                mylistneedsaction[list]['items']
+                | selectattr('summary', 'search', item)
+                | list
+                | count == 0
+              }}
+        then:
+          - action: todo.add_item
+            target:
+              entity_id: '{{ list }}'
+            data:
+              item: '{{ item }}'
+              description: '{{ description | default("") }}'
+fields:
+  item:
+    name: Item
+    description: The to-do item to add
+    required: true
+    selector:
+      text: null
+  description:
+    selector:
+      text:
+        multiple: false
+        multiline: true
+    name: Description
+    description: An optional description
+  list:
+    name: List
+    description: The to-do list
+    required: true
+    selector:
+      entity:
+        filter:
+          - domain: todo
+
+icon: mdi:format-list-checks
+mode: queued
