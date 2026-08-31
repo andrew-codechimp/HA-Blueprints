@@ -36,16 +36,31 @@ sequence:
             mylistcompleted[list]['items']
             | selectattr('summary', 'search', item)
             | list
-            | count == 1
+            | count == 0
           }}
     then:
-      - action: todo.update_item
-        target:
-          entity_id: '{{ list }}'
-        data:
-          item: '{{ item }}'
-          status: needs_action
-          description: '{{ description | default("") }}'
+      - if:
+          - condition: template
+            value_template: |
+              {{
+                state_attr(list, 'supported_features') is not none
+                and (state_attr(list, 'supported_features') | int(0)) | bitwise_and(8)
+              }}
+        then:
+          - action: todo.update_item
+            target:
+              entity_id: '{{ list }}'
+            data:
+              item: '{{ item }}'
+              status: needs_action
+              description: '{{ description | default("") }}'
+        else:
+          - action: todo.update_item
+            target:
+              entity_id: '{{ list }}'
+            data:
+              item: '{{ item }}'
+              status: needs_action
     else:
       - if:
           - condition: template
@@ -57,16 +72,30 @@ sequence:
                 | count == 0
               }}
         then:
-          - action: todo.add_item
-            target:
-              entity_id: '{{ list }}'
-            data:
-              item: '{{ item }}'
-              description: '{{ description | default("") }}'
+          - if:
+              - condition: template
+                value_template: |
+                  {{
+                    state_attr(list, 'supported_features') is not none
+                    and (state_attr(list, 'supported_features') | int(0)) | bitwise_and(8)
+                  }}
+            then:
+              - action: todo.add_item
+                target:
+                  entity_id: '{{ list }}'
+                data:
+                  item: '{{ item }}'
+                  description: '{{ description | default("") }}'
+            else:
+              - action: todo.add_item
+                target:
+                  entity_id: '{{ list }}'
+                data:
+                  item: '{{ item }}'
 fields:
   item:
     name: Item
-    description: The to-do item to add.
+    description: The to-do item to add, if the item already exists in the list it will not be added again, if it exists but is completed it will be marked as needs action again.
     required: true
     selector:
       text: null
