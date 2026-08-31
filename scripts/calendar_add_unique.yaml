@@ -5,7 +5,9 @@ blueprint:
 
     The event summary is compared to the existing calendar items.
 
-    Just press save to create one generic script you can use on any calendar.
+    This blueprint is a simple distribution wrapper around a generic script.
+    
+    Just press save to create one script you can use on any calendar.
   author: andrew-codechimp
   source_url: https://github.com/andrew-codechimp/HA-Blueprints/blob/main/scripts/calendar_add_unique.yaml
   domain: script

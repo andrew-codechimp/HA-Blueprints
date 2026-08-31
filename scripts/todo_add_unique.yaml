@@ -5,7 +5,9 @@ blueprint:
 
     The item name is compared to the existing items in the list.
 
-    Just press save to create one generic script you can use on any to-do list.
+    This blueprint is a simple distribution wrapper around a generic script.
+    
+    Just press save to create one script you can use on any to-do list.
   author: andrew-codechimp
   source_url: https://github.com/andrew-codechimp/HA-Blueprints/blob/main/scripts/todo_add_unique.yaml
   domain: script
