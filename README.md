@@ -25,7 +25,7 @@ This blueprint is a simple distribution wrapper around a generic script that can
 
 ### To-do - Add unique item
 
-A script to add an item to a to-do list if the item does not already exist.
+A script to add an item to a to-do list if the item does not already exist, or if it exists but is completed, it will be marked as needs action again.
     
 The item name is compared to the existing items in the list.
 
