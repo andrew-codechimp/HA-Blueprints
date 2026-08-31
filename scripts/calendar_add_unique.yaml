@@ -63,5 +63,5 @@ fields:
     name: End time
     required: true
 
-mode: queued
 icon: mdi:calendar-plus
+mode: queued
