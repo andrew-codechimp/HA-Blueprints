@@ -9,7 +9,7 @@ blueprint:
 
     This blueprint is a simple distribution wrapper around a generic script.
 
-    
+
     Just press save to create one script you can use on any calendar.
   author: andrew-codechimp
   source_url: https://github.com/andrew-codechimp/HA-Blueprints/blob/main/scripts/calendar_add_unique.yaml
@@ -64,4 +64,4 @@ fields:
     required: true
 
 mode: queued
-icon: mdi:clipboard-list
+icon: mdi:calendar-plus
