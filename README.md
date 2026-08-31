@@ -13,16 +13,6 @@ This blueprint is a simple distribution wrapper around a generic script that can
 
 [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fandrew-codechimp%2FHA-Blueprints%2Fblob%2Fmain%2Fscripts%2Fcalendar_add_unique_event.yaml)
 
-### Light - Change currently on
-
-A script to change lights that are currently on.
-
-Choose one or multiple lights via a target selector and specify the change you want to make. The script will only change lights that are currently on and not hidden.
-
-This blueprint is a simple distribution wrapper around a generic script that can be reused on any light target.
-
-[![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fandrew-codechimp%2FHA-Blueprints%2Fblob%2Fmain%2Fscripts%2Flight_change_currently_on.yaml)
-
 ### To-do - Add unique item
 
 A script to add an item to a to-do list if the item does not already exist, or if it exists but is completed, it will be marked as needs action again.
