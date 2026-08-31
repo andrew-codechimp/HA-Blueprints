@@ -12,7 +12,7 @@ blueprint:
 
     Just press save to create one script you can use on any calendar.
   author: andrew-codechimp
-  source_url: https://github.com/andrew-codechimp/HA-Blueprints/blob/main/scripts/calendar_add_unique.yaml
+  source_url: https://github.com/andrew-codechimp/HA-Blueprints/blob/main/scripts/calendar_add_unique_event.yaml
   domain: script
 
 sequence:

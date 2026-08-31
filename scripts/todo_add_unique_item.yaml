@@ -12,7 +12,7 @@ blueprint:
 
     Just press save to create one script you can use on any to-do list.
   author: andrew-codechimp
-  source_url: https://github.com/andrew-codechimp/HA-Blueprints/blob/main/scripts/todo_add_unique.yaml
+  source_url: https://github.com/andrew-codechimp/HA-Blueprints/blob/main/scripts/todo_add_unique_item.yaml
   domain: script
 
 sequence:
