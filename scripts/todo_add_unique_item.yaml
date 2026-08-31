@@ -65,7 +65,7 @@ sequence:
 fields:
   item:
     name: Item
-    description: The to-do item to add
+    description: The to-do item to add.
     required: true
     selector:
       text: null
@@ -75,10 +75,10 @@ fields:
         multiple: false
         multiline: true
     name: Description
-    description: An optional description
+    description: An optional description. Note that not all to-do lists support descriptions.
   list:
     name: List
-    description: The to-do list
+    description: The to-do list to add the item to.
     required: true
     selector:
       entity:

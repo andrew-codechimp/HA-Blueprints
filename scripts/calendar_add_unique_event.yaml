@@ -45,12 +45,12 @@ fields:
           - domain: calendar
     name: Calendar
     required: true
-    description: The calendar
+    description: The calendar to add the event to.
   summary:
     selector:
       text: null
     name: Summary
-    description: The summary of the event
+    description: The summary of the event.
     required: true
   start_time:
     selector:
