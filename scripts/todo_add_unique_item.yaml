@@ -36,7 +36,7 @@ sequence:
             mylistcompleted[list]['items']
             | selectattr('summary', 'search', item)
             | list
-            | count == 0
+            | count == 1
           }}
     then:
       - if:
