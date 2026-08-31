@@ -1,2 +1,2 @@
 # HA-Blueprints
-A collection of blueprint for Home Assistant
+A collection of blueprints for Home Assistant
