@@ -104,13 +104,13 @@ fields:
     name: Color
     description: >-
       The color in RGB format. A list of three integers between 0 and 255
-      representing the values of red, green, and blue.
+      representing the values of red, green, and blue (cannot be used at the same time as color temperature).
     required: false
     selector:
       color_rgb: {}
   color_temperature:
     name: Color temperature
-    description: The color temperature in kelvin.
+    description: The color temperature in kelvin (cannot be used at the same time as color).
     required: false
     selector:
       color_temp:
