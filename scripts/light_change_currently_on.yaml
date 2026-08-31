@@ -4,12 +4,12 @@ blueprint:
     Change lights that are currently on.
 
 
-    Choose one or multiple lights via a target selector and specify the change you want to make. The script will only change lights that are currently on.
+    Choose one or multiple lights via a target selector and specify the change you want to make. The script will only change lights that are currently on and not hidden.
 
 
     This blueprint is a simple distribution wrapper around a generic script.
 
-    Just press save to create one script you can use on any to-do list.
+    Just press save to create one script you can use on any light target.
 
     Use the single script created in any automations, input fields allow you to customise it for your automation.
   author: andrew-codechimp
