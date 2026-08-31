@@ -5,7 +5,7 @@ blueprint:
 
     The item name is compared to the existing items in the list.
   author: andrew-codechimp
-  source_url: https://raw.githubusercontent.com/andrew-codechimp/HA-Blueprints/refs/heads/main/scripts/todo_add_unique.yaml
+  source_url: https://github.com/andrew-codechimp/HA-Blueprints/blob/main/scripts/todo_add_unique.yaml
   domain: script
 
 sequence:
