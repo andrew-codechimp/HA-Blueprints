@@ -1,5 +1,5 @@
 blueprint:
-  name: Calendar - Add Unique Event
+  name: Calendar - Add unique event
   description: >
     Add an event to a calendar if the event does not already exist.
 
