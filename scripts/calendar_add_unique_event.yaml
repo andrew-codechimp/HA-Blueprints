@@ -11,6 +11,8 @@ blueprint:
 
 
     Just press save to create one script you can use on any calendar.
+
+    Use the single script created in any automations, input fields allow you to customise it for your automation.
   author: andrew-codechimp
   source_url: https://github.com/andrew-codechimp/HA-Blueprints/blob/main/scripts/calendar_add_unique_event.yaml
   domain: script
