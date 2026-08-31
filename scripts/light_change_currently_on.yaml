@@ -94,7 +94,7 @@ sequence:
 fields:
   light_target:
     name: Lights
-    description: Lights to target.
+    description: Lights to target, only lights that are currently on and not hidden will be changed.
     required: true
     selector:
       target:
