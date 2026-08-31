@@ -121,7 +121,7 @@ fields:
     name: Brightness
     description: >-
       Number indicating the percentage of full brightness, where 0 turns the
-      light off, 1 is the minimum brightness, and 100 is the maximum brightness.
+      light off, 1 is the minimum brightness, and 100 is the maximum brightness (cannot be used at the same time as brightness step).
     required: false
     selector:
       number:
@@ -132,7 +132,7 @@ fields:
         mode: slider
   brightness_step_pct:
     name: Brightness step
-    description: Change brightness by a percentage.
+    description: Change brightness by a percentage (cannot be used at the same time as brightness).
     required: false
     selector:
       number:
