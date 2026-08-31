@@ -3,7 +3,7 @@ blueprint:
   description: >
     Add an item to a to-do list if the item does not already exist.
 
-    The item name is compared to the existing items in the list, and if it already exists, it will not be added again.
+    The item name is compared to the existing items in the list, if it already exists it will not be added again.
   author: andrew-codechimp
   source_url: https://raw.githubusercontent.com/andrew-codechimp/HA-Blueprints/main/todo_add_unique.yaml
   domain: script
